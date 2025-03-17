@@ -1,0 +1,6 @@
+This project demonstrates a Tree-Tier Web Application Architecture using Docker Compose. It separates the application into three tiers:
+
+Web Tier: Powered by Nginx, serving static HTML content and acting as a reverse proxy for the PHP application.
+App Tier: A PHP application container that processes user input and communicates with the database.
+Database Tier: A MySQL container that stores user data securely.
+With this setup, each tier runs in an isolated Docker container, ensuring scalability and maintainability. The docker-compose.yml file simplifies the deployment process, while mounted volumes allow for easy code updates. This architecture is ideal for learning containerized deployments or as a foundation for small web projects.
