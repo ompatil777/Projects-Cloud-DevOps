@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S3 Bucket Files</title>
+</head>
+<body>
+    <h2>Files in S3 Bucket</h2>
+    <ul id="file-list"></ul>
+
+    <script>
+        //enter ec2 id
+        fetch("http://YOUR-EC2-IP:5000/list-files")
+            .then(response => response.json())
+            .then(data => {
+                let fileList = document.getElementById("file-list");
+                data.files.forEach(file => {
+                    let li = document.createElement("li");
+                    li.textContent = file;
+                    fileList.appendChild(li);
+                });
+            })
+            .catch(error => console.error("Error:", error));
+    </script>
+</body>
+</html>
